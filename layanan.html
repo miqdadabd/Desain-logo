@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+
+<html class="light" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@600;700&amp;family=Be+Vietnam+Pro:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-tint": "#6f3fca",
+                    "on-primary-fixed": "#24005a",
+                    "primary-fixed-dim": "#d2bcff",
+                    "on-tertiary-fixed-variant": "#584400",
+                    "inverse-on-surface": "#f3f0f1",
+                    "background": "#fcf8f9",
+                    "surface-bright": "#fcf8f9",
+                    "on-error": "#ffffff",
+                    "on-secondary-container": "#fffbff",
+                    "tertiary-container": "#d0a600",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-fixed": "#ffe08b",
+                    "on-secondary-fixed-variant": "#802a00",
+                    "error": "#ba1a1a",
+                    "primary": "#45009e",
+                    "error-container": "#ffdad6",
+                    "surface-container-high": "#eae7e8",
+                    "primary-fixed": "#eaddff",
+                    "surface-container": "#f0edee",
+                    "on-background": "#1b1b1c",
+                    "on-secondary-fixed": "#370e00",
+                    "outline": "#7b7485",
+                    "inverse-surface": "#303031",
+                    "secondary": "#a33800",
+                    "secondary-container": "#cd4800",
+                    "outline-variant": "#ccc3d6",
+                    "primary-container": "#5d2ab8",
+                    "surface-variant": "#e5e2e3",
+                    "tertiary-fixed-dim": "#f1c100",
+                    "on-primary-fixed-variant": "#5621b1",
+                    "surface-container-highest": "#e5e2e3",
+                    "on-primary": "#ffffff",
+                    "secondary-fixed-dim": "#ffb59a",
+                    "on-tertiary-container": "#4f3d00",
+                    "surface": "#fcf8f9",
+                    "on-secondary": "#ffffff",
+                    "surface-container-low": "#f6f3f4",
+                    "secondary-fixed": "#ffdbce",
+                    "on-surface-variant": "#4a4453",
+                    "surface-container-lowest": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "inverse-primary": "#d2bcff",
+                    "on-surface": "#1b1b1c",
+                    "on-tertiary-fixed": "#241a00",
+                    "on-primary-container": "#cbb2ff",
+                    "surface-dim": "#dcd9da",
+                    "tertiary": "#745b00"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "margin": "64px",
+                    "container-max": "1280px",
+                    "unit": "8px"
+            },
+            "fontFamily": {
+                    "button": ["Be Vietnam Pro"],
+                    "label-caps": ["Be Vietnam Pro"],
+                    "h3": ["Noto Serif"],
+                    "h2": ["Noto Serif"],
+                    "h1": ["Noto Serif"],
+                    "body-md": ["Be Vietnam Pro"],
+                    "body-lg": ["Be Vietnam Pro"]
+            },
+            "fontSize": {
+                    "button": ["14px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                    "h3": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "h2": ["48px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "h1": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .text-glow-purple {
+            text-shadow: 0 0 20px rgba(93, 42, 184, 0.3);
+        }
+        .custom-cursor {
+            pointer-events: none;
+            position: fixed;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: rgba(111, 63, 202, 0.3);
+            transition: transform 0.1s ease;
+            z-index: 9999;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface selection:bg-primary-container selection:text-white">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-xl dark:bg-slate-950/80 border-b border-white/20 dark:border-purple-500/20 shadow-[0_20px_40px_rgba(93,42,184,0.08)]">
+<div class="flex justify-between items-center h-20 px-8 max-w-[1280px] mx-auto">
+<span class="text-2xl font-black font-serif text-purple-900 dark:text-purple-100">Chromatic Vision</span>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-slate-600 dark:text-slate-400 font-medium font-serif text-lg tracking-tight hover:text-orange-500 transition-all duration-300" href="#">Portofolio</a>
+<a class="text-purple-700 dark:text-purple-400 font-bold border-b-2 border-purple-600 font-serif text-lg tracking-tight hover:text-orange-500 transition-all duration-300 translate-y-[-1px]" href="#">Layanan</a>
+<a class="text-slate-600 dark:text-slate-400 font-medium font-serif text-lg tracking-tight hover:text-orange-500 transition-all duration-300" href="#">Harga</a>
+<a class="text-slate-600 dark:text-slate-400 font-medium font-serif text-lg tracking-tight hover:text-orange-500 transition-all duration-300" href="#">Kontak</a>
+<button class="ml-4 px-6 py-3 bg-secondary text-white font-button text-button rounded-xl hover:shadow-lg hover:shadow-secondary/20 transition-all transform hover:-translate-y-1">
+                    Mulai Proyek
+                </button>
+</div>
+</div>
+</nav>
+<main class="pt-32">
+<!-- Hero Section -->
+<section class="max-w-[1280px] mx-auto px-8 mb-32 text-center">
+<span class="font-label-caps text-label-caps text-secondary mb-4 block">KEUNGGULAN KREATIF</span>
+<h1 class="font-h1 text-h1 text-on-background mb-6 leading-tight max-w-4xl mx-auto">
+                Manifestasi Identitas Melalui <span class="text-primary italic">Seni &amp; Presisi</span>.
+            </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+                Kami tidak sekadar menggambar; kami merancang narasi visual yang memberontak terhadap kebiasaan namun tetap elegan secara korporat.
+            </p>
+</section>
+<!-- Services Bento Grid -->
+<section class="max-w-[1280px] mx-auto px-8 pb-40">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+<!-- Custom Logo Design -->
+<div class="md:col-span-8 group relative overflow-hidden rounded-[2rem] glass-card p-12 transition-all duration-500 hover:shadow-[0_40px_80px_rgba(93,42,184,0.12)]">
+<div class="flex flex-col h-full justify-between relative z-10">
+<div>
+<div class="w-16 h-16 bg-primary-container/10 rounded-2xl flex items-center justify-center mb-8">
+<span class="material-symbols-outlined text-primary text-4xl" data-icon="brush">brush</span>
+</div>
+<h2 class="font-h2 text-h2 text-on-background mb-6">Desain Logo Kustom</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg mb-8">
+                                Jantung dari identitas brand Anda. Kami menciptakan simbol unik yang menangkap esensi visi Anda, menggabungkan estetika avant-garde dengan fungsionalitas desain yang abadi.
+                            </p>
+<ul class="space-y-4 mb-8">
+<li class="flex items-center gap-3 font-body-md text-on-background">
+<span class="material-symbols-outlined text-secondary" data-icon="check_circle">check_circle</span>
+                                    Sketsa Eksklusif &amp; Orisinal
+                                </li>
+<li class="flex items-center gap-3 font-body-md text-on-background">
+<span class="material-symbols-outlined text-secondary" data-icon="check_circle">check_circle</span>
+                                    Vektor Presisi Tinggi
+                                </li>
+<li class="flex items-center gap-3 font-body-md text-on-background">
+<span class="material-symbols-outlined text-secondary" data-icon="check_circle">check_circle</span>
+                                    Varian Monokrom &amp; Warna
+                                </li>
+</ul>
+</div>
+<button class="w-fit font-button text-button text-primary border-b-2 border-primary-container pb-1 hover:text-secondary hover:border-secondary transition-colors">
+                            PELAJARI PROSES KAMI
+                        </button>
+</div>
+<!-- Decorative Background Image -->
+<div class="absolute right-0 top-0 w-1/2 h-full opacity-10 group-hover:opacity-20 transition-opacity pointer-events-none">
+<img class="w-full h-full object-cover" data-alt="Abstract charcoal and gold paint strokes on textured paper representing raw artistic process and sophisticated design elements" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdijH6D5qiBX7KWQLPmXSfEl0AvM5XUMaA0ryWV06xktvMzp-7x7F7LaOsS7gg44ek8syHBvoB419V0VA059oz4qGV54ZSLjTPvBx1qvCH7n9sLYvL5HLPZnimwU54CCTKT2Zr-xEHtdDM0MwdYToGobTBvjMyTR-M4UsU28dKunzS_LWKM0gC3zUT21uC7ltmXHrD-GTu4jDfvtcEEsEfvkeKSaJGndaGCCuSTwzs6OCQqZzEItLA11axffScr3N_qNvvBNH7U_Ji"/>
+</div>
+</div>
+<!-- Branding Identity -->
+<div class="md:col-span-4 group rounded-[2rem] bg-primary text-white p-12 transition-all duration-500 hover:shadow-[0_40px_80px_rgba(69,0,158,0.2)] flex flex-col justify-between">
+<div class="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center mb-8">
+<span class="material-symbols-outlined text-white text-4xl" data-icon="auto_awesome">auto_awesome</span>
+</div>
+<div>
+<h3 class="font-h3 text-h3 text-white mb-6">Branding Identity</h3>
+<p class="font-body-md text-white/80 mb-8 leading-relaxed">
+                            Membangun ekosistem visual yang kohesif. Dari palet warna hingga tipografi yang bercerita.
+                        </p>
+</div>
+<div class="space-y-4">
+<div class="p-4 bg-white/5 rounded-xl border border-white/10">
+<span class="font-label-caps text-label-caps block opacity-60 mb-1">OUTPUT</span>
+<span class="font-body-md block">Logo System &amp; Palettes</span>
+</div>
+</div>
+</div>
+<!-- Brand Guidelines -->
+<div class="md:col-span-6 group rounded-[2rem] glass-card p-12 transition-all duration-500 hover:shadow-[0_40px_80px_rgba(93,42,184,0.12)]">
+<div class="flex items-start justify-between mb-8">
+<div class="w-16 h-16 bg-secondary/10 rounded-2xl flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary text-4xl" data-icon="menu_book">menu_book</span>
+</div>
+<span class="font-label-caps text-label-caps bg-surface-container-high px-4 py-2 rounded-full">DOKUMENTASI</span>
+</div>
+<h3 class="font-h3 text-h3 text-on-background mb-4">Brand Guidelines</h3>
+<p class="font-body-md text-on-surface-variant mb-8">
+                        Alkitab visual Anda. Panduan komprehensif untuk memastikan brand Anda tetap konsisten dan kuat di semua platform, dari digital hingga cetak.
+                    </p>
+<div class="grid grid-cols-2 gap-4">
+<div class="aspect-square rounded-2xl bg-slate-100 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Minimalist brand manual layout on a clean desk with elegant typography samples and color swatches" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7s9hUDJxcSzXXcl-7_3AK1KXTVW1HjSSIHHMtAYzpLrakBCEE7IaxPchTCzn2jk60EwlT5COo_W7f683nSOz2vCu055Ah-yGcOFcJVXwj5AILKavU0tPWmK37YmBbG8rMjHLt6m3oCDdlbdKd7qqcs0ne0s4KfOnL9c62I3aJ2__orTuVgTuvAhHQ0u_5knTYHG0oa2gxEw5ujfSJGHXQTs_XT_UKZWmuKxsooMWVobPUTPgTZD7XGU5T7tom8bfGSgGy3YfrdMSW"/>
+</div>
+<div class="aspect-square rounded-2xl bg-slate-100 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Designer selecting high-end pantone color chips for a corporate identity project" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDOI8wSQhi_u6uhUr6zsqBslppzFCTxv0Jh3FG82Rsn_ySjSHc5zB1042ODL8TTyEt514G18HY1Ju--cvOhR13NjHXDHHpFM7ZX_S7W5Jil9ezRJ4Qs30bs59ZcI0IFnNZ5qMc0kAbdYfVYQn201i-PfSS5GpGcG-8FOTDHfY7DBfb0DfTEqVHkAznldS6env4iiQRHCjJHrni38U8Z0DunPQeRjanYaMGEZf0pYULDNI-TzdSkXJShUmjvgc7XPY1oClPY258x0nA"/>
+</div>
+</div>
+</div>
+<!-- Konsultasi Visual -->
+<div class="md:col-span-6 group rounded-[2rem] bg-surface-container-lowest p-12 border border-outline-variant transition-all duration-500 hover:border-primary">
+<div class="w-16 h-16 bg-on-background/5 rounded-2xl flex items-center justify-center mb-8">
+<span class="material-symbols-outlined text-on-background text-4xl" data-icon="psychology">psychology</span>
+</div>
+<h3 class="font-h3 text-h3 text-on-background mb-4">Konsultasi Visual</h3>
+<p class="font-body-md text-on-surface-variant mb-8">
+                        Layanan strategis untuk mendefinisikan posisi pasar Anda secara visual. Kami membantu Anda menemukan "suara" yang tepat sebelum satu garis pun ditarik.
+                    </p>
+<div class="p-8 bg-surface-container-low rounded-[1.5rem] relative overflow-hidden">
+<p class="font-h3 italic text-primary opacity-20 absolute -right-4 -bottom-4 text-6xl">VISION</p>
+<blockquote class="font-body-lg italic text-on-background relative z-10">
+                            "Desain adalah kecerdasan yang dibuat terlihat."
+                        </blockquote>
+<div class="mt-4 flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-slate-200 overflow-hidden">
+<img data-alt="Portrait of a professional creative director with a minimalist aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDe90Ho7stNwYXyQ_LcuA6zOE2yg0_gvMCOJXRbW__U7AXIX-7xS7okm88zJPQf3qLgZ1dnrbGNlBDVBvpvT2zNCyrVU1gzf_uwiPxvBhvgcp5WJwU_hzWtcLw48chohROyXsvPpQ9KPji-hNCewfc7NQYeUqeiO5dtM3yAqvn8oKmu7s23O3N9YTSKBDYZDigdhKwX08kxQmpGmG0brJhTqewntoKYRaEKqbhWzWulIl-NZqTkAaymJ-Td-snRqrxB5lpuhg8Bq43"/>
+</div>
+<div>
+<p class="font-label-caps text-[10px] leading-tight">CHIEF CREATIVE</p>
+<p class="font-body-md font-bold">Adrian Vance</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Design Phase Process -->
+<section class="max-w-[1280px] mx-auto px-8 mb-40">
+<div class="text-center mb-20">
+<span class="font-label-caps text-label-caps text-primary">ALUR KERJA</span>
+<h2 class="font-h2 text-h2 text-on-background mt-4">Proses Sang Pemberontak</h2>
+</div>
+<div class="relative flex flex-col md:flex-row justify-between items-center gap-12">
+<!-- Progress Line -->
+<div class="absolute top-1/2 left-0 w-full h-[2px] bg-outline-variant hidden md:block -z-10"></div>
+<div class="flex flex-col items-center text-center max-w-[240px]">
+<div class="w-20 h-20 rounded-full bg-white border-4 border-primary flex items-center justify-center mb-6 shadow-xl">
+<span class="font-h3 text-primary">01</span>
+</div>
+<h4 class="font-h3 text-xl mb-2">Sketching</h4>
+<p class="font-body-md text-sm text-on-surface-variant">Eksplorasi liar tanpa batas di atas kertas.</p>
+</div>
+<div class="flex flex-col items-center text-center max-w-[240px]">
+<div class="w-20 h-20 rounded-full bg-white border-4 border-secondary flex items-center justify-center mb-6 shadow-xl">
+<span class="font-h3 text-secondary">02</span>
+</div>
+<h4 class="font-h3 text-xl mb-2">Vectorizing</h4>
+<p class="font-body-md text-sm text-on-surface-variant">Penyulingan konsep ke dalam bentuk digital murni.</p>
+</div>
+<div class="flex flex-col items-center text-center max-w-[240px]">
+<div class="w-20 h-20 rounded-full bg-primary flex items-center justify-center mb-6 shadow-xl">
+<span class="material-symbols-outlined text-white text-3xl" data-icon="done_all" data-weight="fill">done_all</span>
+</div>
+<h4 class="font-h3 text-xl mb-2">Finalizing</h4>
+<p class="font-body-md text-sm text-on-surface-variant">Sentuhan akhir yang memastikan kesempurnaan.</p>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="max-w-[1280px] mx-auto px-8 mb-40">
+<div class="rounded-[3rem] bg-on-background text-white p-20 text-center relative overflow-hidden">
+<div class="absolute inset-0 opacity-20">
+<img class="w-full h-full object-cover" data-alt="Subtle dark flowing silk texture with purple and orange highlights, creating a sense of luxury and motion" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC78cpfH3bCuoQuzymMMnL7O1KH6JRz-uubedGpO0LyEZFSZlNcP7uOXlnDi4pOfI-oNCXnhyvMBVvtW8aoz-4Yeoq63-16RypP116OMDssPuBJoJ4sAJTUHQaubNDukEYWozavKc3M7qUnrWqq3hqWH2l9vqivo8fXDSMQIscqI6Gom8rbNsPPFXt29-9_KDyA3_hIZF4NS8i_2YR_q6SZyMm1lRQOQ_T9q7Wawox_dExVk9cOgbC6lhL0o7YSA6ZJZwwiIcL3P92u"/>
+</div>
+<div class="relative z-10">
+<h2 class="font-h1 text-h1 mb-8">Siap Mengubah Visi Menjadi <span class="text-secondary italic">Ikon</span>?</h2>
+<p class="font-body-lg text-white/70 max-w-2xl mx-auto mb-12">
+                        Bergabunglah dengan deretan brand yang berani tampil beda dan mendominasi pasar mereka.
+                    </p>
+<div class="flex flex-col md:flex-row gap-6 justify-center">
+<button class="px-12 py-5 bg-secondary text-white font-button text-button rounded-full hover:shadow-[0_20px_40px_rgba(163,56,0,0.4)] transition-all transform hover:-translate-y-2">
+                            Mulai Konsultasi Gratis
+                        </button>
+<button class="px-12 py-5 border border-white/30 text-white font-button text-button rounded-full hover:bg-white/10 transition-all">
+                            Lihat Paket Harga
+                        </button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-50 dark:bg-slate-950 w-full py-16 px-8 border-t border-slate-200 dark:border-purple-900/30">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 max-w-[1280px] mx-auto">
+<div class="md:col-span-1">
+<span class="text-xl font-bold text-purple-900 dark:text-purple-100 font-serif block mb-6">Chromatic Vision</span>
+<p class="font-serif text-sm text-slate-500 dark:text-slate-400">The Sophisticated Rebel of Logo Design.</p>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-label-caps text-label-caps text-primary">NAVIGASI</h4>
+<a class="font-serif text-sm text-slate-500 dark:text-slate-400 hover:text-orange-500 hover:underline decoration-orange-500 underline-offset-4" href="#">Portofolio</a>
+<a class="font-serif text-sm text-purple-700 dark:text-purple-300" href="#">Layanan</a>
+<a class="font-serif text-sm text-slate-500 dark:text-slate-400 hover:text-orange-500 hover:underline decoration-orange-500 underline-offset-4" href="#">Harga</a>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-label-caps text-label-caps text-primary">SOSIAL</h4>
+<a class="font-serif text-sm text-slate-500 dark:text-slate-400 hover:text-orange-500 hover:underline decoration-orange-500 underline-offset-4" href="#">Instagram</a>
+<a class="font-serif text-sm text-slate-500 dark:text-slate-400 hover:text-orange-500 hover:underline decoration-orange-500 underline-offset-4" href="#">LinkedIn</a>
+<a class="font-serif text-sm text-slate-500 dark:text-slate-400 hover:text-orange-500 hover:underline decoration-orange-500 underline-offset-4" href="#">Kontak</a>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-label-caps text-label-caps text-primary">NEWSLETTER</h4>
+<div class="flex gap-2">
+<input class="bg-white border-outline-variant rounded-lg text-sm px-4 py-2 w-full focus:ring-primary focus:border-primary" placeholder="Email Anda" type="email"/>
+<button class="bg-primary text-white p-2 rounded-lg"><span class="material-symbols-outlined" data-icon="send">send</span></button>
+</div>
+</div>
+</div>
+<div class="max-w-[1280px] mx-auto mt-16 pt-8 border-t border-slate-200 dark:border-purple-900/10 text-center">
+<p class="font-serif text-sm text-slate-500 dark:text-slate-400">© 2024 Chromatic Vision. The Sophisticated Rebel of Logo Design.</p>
+</div>
+</footer>
+</body></html>
